@@ -36,5 +36,49 @@ def verificar_jogada(matriz, linha, coluna):
         
     return "Posição desconhecida."
 
-jogador1 = tabuleiro1(5,5) 
-tabu = exibir_tabuleiro(jogador1)
+
+def verificar_vitoria(matriz):
+    for linha in matriz:
+        for posicao in linha:
+            if posicao == '🚤':
+                return False
+
+    return True
+
+
+def trocar_jogador(jogador_atual):
+    if jogador_atual == 1:
+        return 2
+    else:
+        return 1
+
+
+print("JOGADOR 1 - Monte seu tabuleiro:")
+jogador1 = tabuleiro1(5, 5)
+exibir_tabuleiro(jogador1)
+
+print("JOGADOR 2 - Monte seu tabuleiro:")
+jogador2 = tabuleiro1(5, 5)
+exibir_tabuleiro(jogador2)
+
+jogador_atual = 1
+
+while True:
+    print(f"\nVez do Jogador {jogador_atual}")
+
+    if jogador_atual == 1:
+        matriz_alvo = jogador2
+    else:
+        matriz_alvo = jogador1
+
+    linha = int(input("Digite a linha que deseja atacar (0 a 4): "))
+    coluna = int(input("Digite a coluna que deseja atacar (0 a 4): "))
+
+    resultado = verificar_jogada(matriz_alvo, linha, coluna)
+    print(resultado)
+
+    if verificar_vitoria(matriz_alvo):
+        print(f"\nJogador {jogador_atual} venceu!")
+        break
+
+    jogador_atual = trocar_jogador(jogador_atual)   
