@@ -111,7 +111,7 @@ def trocar_jogador(jogador_atual):
     else:
         return 1
 
-# 4. FLUXO PRINCIPAL (LOOP DO JOGO)
+# 4. FLUXO PRINCIPAL - Main (LOOP DO JOGO)
 
 def iniciar_jogo():
     print("JOGADOR 1 - Monte seu tabuleiro:")
