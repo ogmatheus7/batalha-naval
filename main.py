@@ -1,3 +1,5 @@
+# 1. CRIAÇÃO E CONFIGURAÇÃO DO TABULEIRO
+
 def criar_tabuleiro(n_linhas, n_colunas):
     matriz = []
 
@@ -36,6 +38,7 @@ def posicionar_navios(matriz, quantidade):
 
     return matriz
 
+# 2. EXIBIÇÃO VISUAL DOS TABULEIROS
 
 def exibir_tabuleiro(matriz):
     print("\n    0    1    2    3    4")
@@ -71,6 +74,7 @@ def exibir_tabuleiro_ataque(matriz):
 
     print()
 
+# 3. VERIFICAÇÃO DE JOGADAS E VITÓRIAS (JOGADAS E REGRAS)
 
 def verificar_jogada(matriz, linha, coluna):
     if not (0 <= linha < 5 and 0 <= coluna < 5):
@@ -107,6 +111,7 @@ def trocar_jogador(jogador_atual):
     else:
         return 1
 
+# 4. FLUXO PRINCIPAL (LOOP DO JOGO)
 
 def iniciar_jogo():
     print("JOGADOR 1 - Monte seu tabuleiro:")
