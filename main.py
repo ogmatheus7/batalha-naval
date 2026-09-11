@@ -1,5 +1,7 @@
+#Criação do tabuleiro
 def tabuleiro1(n_linhas, n_colunas):
     matriz = [] 
+ 
     for i in range(n_linhas):
         linha = []
         for j in range(n_colunas):
@@ -7,7 +9,7 @@ def tabuleiro1(n_linhas, n_colunas):
             linha.append(n)
         matriz.append(linha)
     return matriz
-
+#Organização da matriz e orientação de indice
 def exibir_tabuleiro(matriz):
     print("\n 0  1  2  3  4 ")
     for i in range (5):
@@ -17,8 +19,9 @@ def exibir_tabuleiro(matriz):
         print(linha)
     print()
 
+#Verificação de jogada/Validação de limites e acertos 
 def verificar_jogada(matriz, linha, coluna):
-    if not (0 <= linha < 5 and 0 <= coluna < 5):
+    if (linha > 4 and coluna < 0):
         return "Coordenada inválida! Escolha números entre 0 e 4."
     
     posicao = matriz[linha][coluna]
